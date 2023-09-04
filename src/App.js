@@ -1,3 +1,4 @@
+import "./App.css";
 import { useEffect } from 'react';
 
 export default function IndexPage() {
@@ -9,6 +10,7 @@ export default function IndexPage() {
         window.flutter_inappwebview
           .callHandler('handlerFoo', 'hello bro')
           .then(function (result) {
+            console.log("into then")
             // print to the console the data coming
             // from the Flutter side.;;
             console.log(JSON.stringify(result));
@@ -24,6 +26,7 @@ export default function IndexPage() {
           });
       }
     );
-  });
-  return <div>Hello World. testing</div>;
+  },[]);
+  return <div>Hello World.</div>;
 }
+

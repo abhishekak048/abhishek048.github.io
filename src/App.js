@@ -7,6 +7,7 @@ export default function IndexPage() {
     window.addEventListener(
       'flutterInAppWebViewPlatformReady',
       function (event) {
+        console.log("event then")
         window.flutter_inappwebview
           .callHandler('handlerFoo', 'hello bro')
           .then(function (result) {

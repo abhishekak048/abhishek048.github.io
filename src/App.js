@@ -4,27 +4,16 @@ import { useEffect } from 'react';
 export default function IndexPage() {
   useEffect(() => {
     console.log('heyyaaa');
+    // window.webkit.messageHandlers.bridge.postMessage("data");
+  //  window.Android.mobileLoginForCaptchaResponse("token");
     window.addEventListener(
-      'flutterInAppWebViewPlatformReady',
+      'message',
       function (event) {
         console.log("event then")
-        window.flutter_inappwebview
-          .callHandler('handlerFoo', 'hello bro')
-          .then(function (result) {
-            console.log("into then")
-            // print to the console the data coming
-            // from the Flutter side.;;
-            console.log(JSON.stringify(result));
 
-            window.flutter_inappwebview.callHandler(
-              'handlerFooWithArgs',
-              1,
-              true,
-              ['bar', 5],
-              { foo: 'baz' },
-              result
-            );
-          });
+
+        window.flutter_inappwebview
+          .callHandler('handlerFoo', 'flutter moon')
       }
     );
   },[]);
